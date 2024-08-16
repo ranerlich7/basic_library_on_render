@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book List</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+      th {
+        background-color: #f4f4f4;
+      }
+      img {
+        max-width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Book List</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>ISBN</th>
+          <th>Published Year</th>
+          <th>Available Copies</th>
+          <th>Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for book in books %}
+        <tr>
+          <td>{{ book['Title'] }}</td>
+          <td>{{ book['Author'] }}</td>
+          <td>{{ book['ISBN'] }}</td>
+          <td>{{ book['PublishedYear'] }}</td>
+          <td>{{ book['AvailableCopies'] }}</td>
+          <td>
+            {% if book['image'] %}
+            <img src="{{ book['image'] }}" alt="Book Image" />
+            {% else %} No Image {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
