@@ -28,6 +28,9 @@
   </head>
   <body>
     <h1>My Great Library</h1>
+    <h2>
+      {% if session.username %} Hello {{ session['username'] }} {% endif %}
+    </h2>
     <table>
       <thead>
         <tr>
