@@ -43,7 +43,7 @@
         </tr>
       </thead>
       <tbody>
-        {% for book in books %}
+        {{ books}} {% for book in books %}
         <tr>
           <td>{{ book['Title'] }}</td>
           <td>{{ book['Author'] }}</td>
